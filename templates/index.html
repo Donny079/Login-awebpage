@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vincent — Modern Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">Vincent</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#" class="nav-link" id="open-login">Login</a></li>
+      </ul>
+      <button class="btn btn-primary" id="open-login-cta">Get Started</button>
+      <button class="nav-toggle" aria-label="open navigation">☰</button>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-title">Smart Authentication, Fast Onboarding</h1>
+        <p class="hero-sub">Beautiful, responsive UI with a lightweight demo login to get you started.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" id="get-started">Get Started</button>
+          <a class="btn btn-ghost" href="#features">Explore Features</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="card-illustration">🔐</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Vincent</h2>
+      <p class="lead">A simple demo authentication front-end built with modern design patterns — soft shadows, gradients, and smooth animations.</p>
+    </div>
+  </section>
+
+  <section id="features" class="section features">
+    <div class="container">
+      <h2 class="section-title">Key Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3>Fast Setup</h3>
+          <p>Minimal code to get a modern login UI integrated quickly.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Patterns</h3>
+          <p>Client and server-side validation examples for demo purposes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Responsive</h3>
+          <p>Layouts adapt smoothly for phones, tablets, and desktops.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✨</div>
+          <h3>Polished UX</h3>
+          <p>Micro-interactions, hover states and entrance animations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <strong>Vincent</strong> — Demo project</p>
+    </div>
+  </footer>
+
+  <!-- Login Modal -->
+  <div class="modal" id="login-modal" aria-hidden="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div class="modal-content">
+        <h3>Sign in to your account</h3>
+        <p class="muted">Demo credentials: <code>test@example.com</code> / <code>1234</code></p>
+        <form id="login-form" autocomplete="off">
+          <label class="label">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+          <label class="label">Password</label>
+          <input id="password" name="password" type="password" placeholder="••••••" required>
+
+          <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
+        <p class="muted small">Forgot password? <a href="#">Reset</a> · <a href="#">Register</a></p>
+        <div id="login-alert" class="alert" role="alert" aria-live="polite" hidden></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
